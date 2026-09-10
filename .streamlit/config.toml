@@ -1,0 +1,19 @@
+[theme]
+# Określa, że motyw bazowy to CIEMNY.
+base = "dark" 
+
+# Główne kolory:
+# Kolor akcentu (przyciski, linki, slider). 
+primaryColor = "#B71C1C" 
+
+# Kolor tła aplikacji. Ciemny odcień.
+backgroundColor = "#0E1117"
+
+# Kolor tła dla pasków bocznych i kontenerów. Lekko jaśniejszy ciemny kolor.
+secondaryBackgroundColor = "#262730"
+
+# Kolor czcionki. Biały/jasny dla lepszej czytelności na ciemnym tle.
+textColor = "#FAFAFA" 
+
+# Użyj mniejszej czcionki.
+font = "sans serif"
