@@ -19,8 +19,5 @@ Report_WIP.txt
 
 # Legacy sample images no longer referenced by app.py
 # (only experimental_data_from_microscope/C.jpg is fetched at runtime)
-experimental_data_from_microscope/A.jpg
-experimental_data_from_microscope/D.jpg
-experimental_data_from_microscope/E.jpg
-experimental_data_from_microscope/F.jpg
+
 experimental_data_from_microscope/Image_12853.tif
