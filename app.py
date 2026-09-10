@@ -152,16 +152,23 @@ def get_erythrocyte_shape_factors(image, anomaly_threshold, min_axis_size):
                 
                 if minor_axis > 0:
                     shape_factor = major_axis / minor_axis
-                    
+
                     # Calculating Ellipticity
                     ellipticity = 1 - (minor_axis / major_axis)
-                    
+
+                    # Color bands are derived from the anomaly threshold itself
+                    # (not fixed absolute values), so a cell's color on the image
+                    # can never contradict its Normal/Anomaly classification in the
+                    # table below, whatever threshold the user picks on the slider.
+                    yellow_cutoff = anomaly_threshold * 0.75
+                    red_cutoff = anomaly_threshold * 0.9
+
                     ellipse_color = (0, 255, 0)  # Green = normal
-                    
-                    if shape_factor > 1.3 and shape_factor <= 1.5:
+
+                    if shape_factor > yellow_cutoff and shape_factor <= red_cutoff:
                         ellipse_color = (0, 255, 255)  # Yellow = moderately elongated
-                    elif shape_factor > 1.5:
-                        ellipse_color = (0, 0, 255)  # Red = highly elongated
+                    elif shape_factor > red_cutoff:
+                        ellipse_color = (0, 0, 255)  # Red = highly elongated (still below the anomaly threshold)
 
                     if shape_factor <= anomaly_threshold:
                         # Storing all metrics
@@ -443,7 +450,7 @@ if run_button:
             if not df_anomalies.empty:
                 ax_sf.hist(df_anomalies['Shape Factor'], bins=15, alpha=0.7, color=ACCENT_COLOR, edgecolor='black', label='Anomaly (SF > Threshold)')
             
-            ax_sf.axvline(x=anomaly_threshold_slider, color='r', linestyle='--', label=f'Threshold ({anomaly_threshold_slider:.2f}')
+            ax_sf.axvline(x=anomaly_threshold_slider, color='r', linestyle='--', label=f'Threshold ({anomaly_threshold_slider:.2f})')
             
             ax_sf.legend()
             ax_sf.set_xlabel('Shape Factor (Major Axis / Minor Axis)')
@@ -541,8 +548,8 @@ if run_button:
             
             st.markdown("---")
             st.subheader("⬇️ Download Results")
-            col_download_excel, col_download_csv, col_download_pdf_placeholder = st.columns(3)
-            
+            col_download_excel, col_download_csv = st.columns(2)
+
             with col_download_excel:
                  st.download_button(
                     label="Download Data (Excel)",
@@ -561,18 +568,6 @@ if run_button:
                     mime='text/csv',
                     use_container_width=True,
                     help="Downloads all detailed data in text format (.csv). Uses a semicolon as a separator."
-                )
-
-            with col_download_pdf_placeholder:
-                # Placeholder for PDF Report
-                st.download_button(
-                    label="PDF Report (WIP)",
-                    data="Placeholder Content", # Empty data as placeholder
-                    file_name="Report_WIP.txt", 
-                    mime="text/plain",
-                    use_container_width=True,
-                    disabled=True,
-                    help="Generating a comprehensive report in PDF format is currently under implementation."
                 )
 
             # --- END: DOWNLOAD BUTTONS ---
