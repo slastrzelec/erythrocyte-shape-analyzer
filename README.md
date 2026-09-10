@@ -14,6 +14,22 @@ The project grew out of research on the acute effects of functionalized carbon n
 
 ---
 
+## 📸 Screenshots
+
+**Detected cells with per-cell shape classification** (green = normal, yellow = moderately elongated, red = highly elongated, magenta = anomaly) alongside live statistics:
+
+![Detected cells and key statistics](screenshots/detected_cells.png)
+
+**Shape Factor vs. Area** — anomalies (red) separate cleanly from the normal population:
+
+![Shape Factor vs Area scatter plot](screenshots/shape_factor_vs_area.png)
+
+**Shape Factor distribution** across the analyzed sample:
+
+![Shape Factor distribution histogram](screenshots/shape_factor_distribution.png)
+
+---
+
 ## 🌟 Features
 
 * **Automated RBC detection** — Otsu thresholding + contour detection + ellipse fitting, with a minimum-axis-size filter to reject segmentation artifacts.
