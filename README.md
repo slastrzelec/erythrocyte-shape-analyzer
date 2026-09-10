@@ -2,7 +2,7 @@
 
 **Quantitative, image-based analysis of red blood cell morphology — built with Streamlit and OpenCV.**
 
-🔗 **Live demo:** [erythrocyte-shape-analyzer.streamlit.app](https://erythrocyte-shape-analyzer.streamlit.app)
+🔗 **Live demo:** <a href="https://erythrocyte-shape-analyzer.streamlit.app" target="_blank" rel="noopener noreferrer">erythrocyte-shape-analyzer.streamlit.app</a>
 
 ---
 
@@ -91,7 +91,7 @@ This tool is based on methodology developed for the following study:
 
 > Functionalized carbon nanotubes are a group of nanomaterials with many potential applications in bionanomedicine. However, they can also be toxic, especially those functionalized with metal ions. Carbon nanotubes enter cells easily. The research focused on investigating the acute effects of multi-walled carbon nanotubes with attached Ni$^{2+}$ ions (MWCNTs-Ni) on the functioning of red blood cells. The very low concentration of MWCNTs-Ni used did not cause changes in the size and shape of red blood cells, but it did affect the states of haemoglobin and its ability to reversibly bind oxygen. MWCNTs-Ni-treated red blood cells showed an increased affinity for O$_2$, similar to that observed in red blood cells from essential hypertensive subjects. The results indicate a potential risk that MWCNTs-Ni may influence the development of hypertension.
 
-📄 [Download the full publication (PDF)](https://github.com/slastrzelec/erythrocyte-shape-analyzer/blob/main/publikacja%20SS%20APP.pdf)
+📄 <a href="https://github.com/slastrzelec/erythrocyte-shape-analyzer/blob/main/publikacja%20SS%20APP.pdf" target="_blank" rel="noopener noreferrer">Download the full publication (PDF)</a>
 
 ---
 
@@ -104,4 +104,4 @@ MIT — see [LICENSE](LICENSE). The accompanying publication PDF is included for
 ## 🧑‍💻 Author
 
 **Sławomir Strzelec**
-[GitHub](https://github.com/slastrzelec) · [LinkedIn](https://www.linkedin.com/in/s%C5%82awomir-strzelec-b32794169/)
+<a href="https://github.com/slastrzelec" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/s%C5%82awomir-strzelec-b32794169/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
