@@ -63,7 +63,7 @@ st.markdown("---")
 
 # --- COMBINED SECTION: ABSTRACT AND PUBLICATION DOWNLOAD ---
 
-PUBLICATION_URL = "https://raw.githubusercontent.com/slastrzelec/erytrocyty-analyze/main/publikacja%20SS%20APP.pdf"
+PUBLICATION_URL = "https://raw.githubusercontent.com/slastrzelec/erythrocyte-shape-analyzer/main/publikacja%20SS%20APP.pdf"
 FILE_NAME = "publication_SS_APP.pdf"
 
 ABSTRACT_TEXT = """
@@ -92,15 +92,19 @@ with col_abstract:
         unsafe_allow_html=True
     )
 
+@st.cache_data(ttl=3600, show_spinner=False)
+def fetch_publication_pdf(url):
+    """Fetches the publication PDF once per hour instead of on every rerun."""
+    response = requests.get(url, timeout=15)
+    response.raise_for_status()
+    return response.content
+
 with col_button:
     st.write("")
-    st.write("") 
+    st.write("")
     try:
-        response = requests.get(PUBLICATION_URL)
-        # BUG FIX: Changed raise_content() to raise_for_status()
-        response.raise_for_status()
-        pdf_bytes = response.content
-        
+        pdf_bytes = fetch_publication_pdf(PUBLICATION_URL)
+
         st.download_button(
             label="⬇️ DOWNLOAD PDF",
             data=pdf_bytes,
@@ -110,7 +114,7 @@ with col_button:
         )
 
     except requests.exceptions.RequestException as e:
-        st.error("❌ Error loading file for download.")
+        st.error(f"❌ Error loading file for download: {e}")
 
 st.markdown("---")
 # --- END COMBINED SECTION ---
@@ -274,7 +278,7 @@ if run_button:
         st.success("✅ Image uploaded successfully!")
 
     elif use_default_image:
-        default_url = "https://raw.githubusercontent.com/slastrzelec/erytrocyty-analyze/main/experminental_data_from_microscope/C.jpg"
+        default_url = "https://raw.githubusercontent.com/slastrzelec/erythrocyte-shape-analyzer/main/experminental_data_from_microscope/C.jpg"
         try:
             response = requests.get(default_url)
             response.raise_for_status()
@@ -579,7 +583,7 @@ if run_button:
             st.subheader("🧑‍💻 About Me / Author")
 
             # Raw URL for direct embedding
-            IMAGE_URL = "https://raw.githubusercontent.com/slastrzelec/erytrocyty-analyze/main/dowo%CC%81d.jpg"
+            IMAGE_URL = "https://raw.githubusercontent.com/slastrzelec/erythrocyte-shape-analyzer/main/dowo%CC%81d.jpg"
             
             # Create columns for image and text
             col_photo, col_bio = st.columns([1, 4])
@@ -599,7 +603,7 @@ if run_button:
                     </p>
                     
                     **Contact / Source Code:**
-                    - **GitHub:** [slastrzelec/erytrocyty-analyze](https://github.com/slastrzelec/erytrocyty-analyze)
+                    - **GitHub:** [slastrzelec/erythrocyte-shape-analyzer](https://github.com/slastrzelec/erythrocyte-shape-analyzer)
                     - **LinkedIn:** [Sławomir Strzelec](https://www.linkedin.com/in/s%C5%82awomir-strzelec-b32794169/)
                     <br>
                     **Disclaimer:** This is a scientific research and demonstration tool, not a medical diagnostic device.

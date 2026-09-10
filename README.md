@@ -2,7 +2,7 @@
 
 **Quantitative, image-based analysis of red blood cell morphology — built with Streamlit and OpenCV.**
 
-🔗 **Live demo:** [erytroanaly.streamlit.app](https://erytroanaly.streamlit.app)
+🔗 **Live demo:** [erythrocyte-shape-analyzer.streamlit.app](https://erythrocyte-shape-analyzer.streamlit.app)
 
 ---
 
