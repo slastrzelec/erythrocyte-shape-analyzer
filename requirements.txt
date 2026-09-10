@@ -1,7 +1,7 @@
-streamlit
-opencv-python-headless
-numpy
-requests
-pandas
-matplotlib
-openpyxl
+streamlit==1.63.0
+opencv-python-headless==4.14.0.94
+numpy==2.4.6
+pandas==3.0.5
+matplotlib==3.11.1
+requests==2.34.2
+openpyxl==3.1.5

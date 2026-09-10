@@ -278,7 +278,7 @@ if run_button:
         st.success("✅ Image uploaded successfully!")
 
     elif use_default_image:
-        default_url = "https://raw.githubusercontent.com/slastrzelec/erythrocyte-shape-analyzer/main/experminental_data_from_microscope/C.jpg"
+        default_url = "https://raw.githubusercontent.com/slastrzelec/erythrocyte-shape-analyzer/main/experimental_data_from_microscope/C.jpg"
         try:
             response = requests.get(default_url)
             response.raise_for_status()
@@ -583,7 +583,7 @@ if run_button:
             st.subheader("🧑‍💻 About Me / Author")
 
             # Raw URL for direct embedding
-            IMAGE_URL = "https://raw.githubusercontent.com/slastrzelec/erythrocyte-shape-analyzer/main/dowo%CC%81d.jpg"
+            IMAGE_URL = "https://raw.githubusercontent.com/slastrzelec/erythrocyte-shape-analyzer/main/author.jpg"
             
             # Create columns for image and text
             col_photo, col_bio = st.columns([1, 4])

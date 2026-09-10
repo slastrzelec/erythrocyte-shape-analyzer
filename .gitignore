@@ -18,9 +18,9 @@ Erythrocyte_Data.csv
 Report_WIP.txt
 
 # Legacy sample images no longer referenced by app.py
-# (only experminental_data_from_microscope/C.jpg is fetched at runtime)
-experminental_data_from_microscope/A.jpg
-experminental_data_from_microscope/D.jpg
-experminental_data_from_microscope/E.jpg
-experminental_data_from_microscope/F.jpg
-experminental_data_from_microscope/Image_12853.tif
+# (only experimental_data_from_microscope/C.jpg is fetched at runtime)
+experimental_data_from_microscope/A.jpg
+experimental_data_from_microscope/D.jpg
+experimental_data_from_microscope/E.jpg
+experimental_data_from_microscope/F.jpg
+experimental_data_from_microscope/Image_12853.tif

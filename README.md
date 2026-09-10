@@ -79,6 +79,12 @@ This tool is based on methodology developed for the following study:
 
 ---
 
+## 📄 License
+
+MIT — see [LICENSE](LICENSE). The accompanying publication PDF is included for reference and remains subject to its original publisher's copyright.
+
+---
+
 ## 🧑‍💻 Author
 
 **Sławomir Strzelec**
