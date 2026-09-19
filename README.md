@@ -4,6 +4,8 @@
 
 🔗 **Live demo:** <a href="https://erythrocyte-shape-analyzer.streamlit.app" target="_blank" rel="noopener noreferrer">erythrocyte-shape-analyzer.streamlit.app</a>
 
+[![Tests](https://github.com/slastrzelec/erythrocyte-shape-analyzer/actions/workflows/tests.yml/badge.svg)](https://github.com/slastrzelec/erythrocyte-shape-analyzer/actions/workflows/tests.yml)
+
 ---
 
 ## Overview
@@ -81,6 +83,21 @@ pip install -r requirements.txt
 
 ```bash
 streamlit run app.py
+```
+
+---
+
+## ✅ Testing
+
+The core detection/measurement logic (`shape_analysis.py`) is covered by unit tests in `tests/test_shape_analysis.py`. Since a real microscope image has no known ground truth, the tests run the pipeline against synthetic images with hand-drawn ellipses of known dimensions, so the expected Shape Factor, ellipticity, and area can be computed independently and checked against what the pipeline returns. Coverage includes shape-factor correctness, normal/anomaly classification, artifact filtering by size, multi-cell detection, and the color-band/classification consistency fix.
+
+Tests run automatically via GitHub Actions on every push and pull request to `main`.
+
+To run them locally:
+
+```bash
+pip install -r requirements-dev.txt
+pytest tests/ -v
 ```
 
 ---
